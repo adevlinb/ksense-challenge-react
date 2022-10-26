@@ -1,24 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from "react";
+import DisplayPosts from "./components/DisplayUsers";
+import DisplayUsers from "./components/DisplayUsers";
 
 function App() {
+
+  let [users, setUsers] = useState([]);
+  let [posts, setPosts] = useState([]);
+  let [selectedUser, setSelectedUser] = useState([]);
+
+  useEffect(() => {
+    async function getUsers() {
+      let usersResults = await fetch('https://jsonplaceholder.typicode.com/users')
+        .then((response) => response.json())
+        .then((json) => users = json);
+        setUsers(usersResults)
+        setSelectedUser()
+    }
+    getUsers();
+  }, []);
+
+  let names = users.map((user, idx) => (
+    <DisplayUsers user={user} users={users} key={idx} index={idx} setSelectedUser={setSelectedUser} />
+  ))
+
+  let userPosts = posts.map(post => (
+    <DisplayPosts post={post}/>
+  ))
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          TESTING
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Ksense Technologies: DOM Code Challenge - REACT</h1>
+      <main>
+        <div>
+          <h2 className="title">Users:</h2>
+          <div id="users">{names}</div>
+        </div>
+        <div>
+          <h2 className="title" id="selectedUser"></h2>
+          <div id="posts">{userPosts}</div>
+        </div>
+      </main>
+    </>
   );
 }
 
