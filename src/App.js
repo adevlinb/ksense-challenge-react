@@ -24,7 +24,6 @@ function App() {
       .then((response) => response.json())
       .then((json) => json);
     setPosts(postResults)
-      console.log(postResults, "postresults")
   }
 
   let names = users.map((user, idx) => (
