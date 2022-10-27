@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ksense-challenge-react/static/css/main.48f14e32.css",
-    "main.js": "/ksense-challenge-react/static/js/main.b50642ce.js",
+    "main.js": "/ksense-challenge-react/static/js/main.20df9f23.js",
     "index.html": "/ksense-challenge-react/index.html",
     "main.48f14e32.css.map": "/ksense-challenge-react/static/css/main.48f14e32.css.map",
-    "main.b50642ce.js.map": "/ksense-challenge-react/static/js/main.b50642ce.js.map"
+    "main.20df9f23.js.map": "/ksense-challenge-react/static/js/main.20df9f23.js.map"
   },
   "entrypoints": [
     "static/css/main.48f14e32.css",
-    "static/js/main.b50642ce.js"
+    "static/js/main.20df9f23.js"
   ]
 }
