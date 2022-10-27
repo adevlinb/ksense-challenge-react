@@ -1,10 +1,10 @@
 
 
-export default function DisplayUsers({ user, users, index, setSelectedUser }) {
+export default function DisplayUsers({ user, users, index, setSelectedUser, getPosts }) {
 
     function handleClick() {
-        console.log(users, index, users[index])
         setSelectedUser(users[index])
+        getPosts(users[index].id)
     }
 
     return (

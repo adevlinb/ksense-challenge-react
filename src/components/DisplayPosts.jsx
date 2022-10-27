@@ -1,7 +1,7 @@
 
 
-export default function DisplayPosts() {
+export default function DisplayPosts({ post }) {
     return (
-        <h1>posts</h1>
+        <h3>{post.title}</h3>
     )
 }
